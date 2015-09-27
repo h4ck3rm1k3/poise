@@ -19,6 +19,7 @@
 
 require 'poise/helpers/lwrp_polyfill'
 require 'poise/helpers/resource_name'
+require 'chefspec'
 
 
 module Poise
@@ -61,7 +62,11 @@ module Poise
         #
         # @see Resource::ResourceName.provides
         def provides(name, *args, &block)
-          ChefSpec.define_matcher(name) if defined?(ChefSpec)
+          if defined?(ChefSpec)
+            if ChefSpec.respond_to?(:define_matcher)
+              ChefSpec.define_matcher(name)
+            end
+          end
           # Call #actions here to grab any actions from a parent class.
           actions.each do |action|
             ChefspecMatchers.create_matcher(name, action)

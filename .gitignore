@@ -9,3 +9,6 @@ pkg/
 .yardoc/
 doc/
 
+/.uploaded-cookbook-version.json
+/poise-2.4.0.pre.gem
+/files/halite_gem/
