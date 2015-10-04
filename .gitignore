@@ -11,3 +11,4 @@ doc/
 /.uploaded-cookbook-version.json
 /files/halite_gem/
 /poise-*.gem
+/lib/poise/#version.rb#
