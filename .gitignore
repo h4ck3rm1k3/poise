@@ -12,3 +12,5 @@ doc/
 /files/halite_gem/
 /poise-*.gem
 /lib/poise/#version.rb#
+/lib/poise/helpers/#subcontext_block.rb#
+/lib/poise/helpers/.#subcontext_block.rb

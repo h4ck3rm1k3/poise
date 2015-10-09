@@ -29,6 +29,9 @@ module Poise
       def subcontext_block(parent_context=nil, &block)
         # Setup a subcontext.
         parent_context ||= @run_context
+        if parent_context.nil?
+          raise "parent context is nil"
+        end
         sub_run_context = parent_context.create_child()
         # Reset state for the subcontext. In 12.4+ this uses the built-in
         # support, otherwise do it manually.

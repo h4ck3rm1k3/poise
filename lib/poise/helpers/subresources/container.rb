@@ -117,6 +117,10 @@ module Poise
           created_at ||= caller[0]
           # Run this inside a subcontext to avoid adding to the current resource collection.
           # It will end up added later, indirected via @subresources to ensure ordering.
+          Chef::Log.debug("subcontext_block :")
+          Chef::Log.debug("subcontext_block #{@run_context}")
+          
+          
           @subcontexts << subcontext_block do
             namespace = if self.class.container_namespace == true
               # If the value is true, use the name of the container resource.
